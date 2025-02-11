@@ -8,7 +8,7 @@ export default function ConfirmationModal({
   message = "Are you sure?", 
   confirmText = "Yes", 
   cancelText = "No",
-  imagePreview = null // Untuk preview gambar jika ada
+  imagePreview = null 
 }) {
   useEffect(() => {
     const handleEsc = (event) => {

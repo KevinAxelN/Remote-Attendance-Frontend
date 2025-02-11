@@ -2,7 +2,7 @@ function Header() {
   const handleLogout = () => {
     localStorage.removeItem('userId');
     localStorage.removeItem('isAuthenticated');
-    window.location.href = "/login"; // Redirect ke halaman login
+    window.location.href = "/login"; 
   }; 
 
   return (

@@ -113,14 +113,12 @@ function Attendance() {
     setIsLoading(true);
 
     if (!userId) {
-      // alert('User ID not found!');
       setErrorMessage('User ID not found!');
       setShowInformationModal(true);
       return;
     }
     
     if (!picture) {
-      // alert('Please select a photo before check-in!');
       setErrorMessage('Please select a photo before check-in!');
       setShowInformationModal(true);
       return;
@@ -142,8 +140,6 @@ function Attendance() {
         }
       );
 
-      console.log('RESPONSEE: ' , response);
-
       if (response.data.message) {
         setSuccessMessage(`${response.data.message}`);
         setShowSuccessModal(true);
@@ -157,7 +153,6 @@ function Attendance() {
       
     } catch (error) {
       console.error('Check-in error:', error);
-      // alert(`Something wrong when check-in: ${error.response?.data?.error || "An error occurred!"}`);
       setErrorMessage(`${error.response?.data?.error || error.response?.data?.message  || "An error occurred while checkin!"}`);
       setShowInformationModal(true);
     } finally {
@@ -185,8 +180,6 @@ function Attendance() {
   
     } catch (error) {
       console.error("Error fetching attendance:", error);
-      // alert("Failed to get Attendances.");
-      console.log('ERROR MESSAGE', error);
       setErrorMessage(`${error.response?.data?.error || error.response?.data?.message || "Error fetching attendancse!"}`);
       setShowInformationModal(true);
     } finally {
@@ -233,7 +226,6 @@ function Attendance() {
                   <button 
                     onClick={() => {
                       if (!imagePreview) {
-                        // alert("Please upload an attendance picture before check-in!");
                         setErrorMessage(`Please upload an attendance picture before check-in!`);
                         setShowInformationModal(true);
                         return;
